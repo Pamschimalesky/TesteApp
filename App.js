@@ -7,10 +7,11 @@ export default function App() {
   const [task, setTask] = useState();
 
   const handleAddTask = () => {
-    console.log(task);
+    setTaskItems([...taskItems, task])
+    setTask(null);
 
   const [taskItems, setTaskItems] = useState([]);
-  
+
   }
 
   return (
@@ -22,11 +23,19 @@ export default function App() {
 
         <View style={styles.itens}>
           {/*Local das tarefas*/}
-          <Task text={'Pentear o cabelo'}/>
+          {
+            taskItems.map((item)) => {
+              return <task text={item} />
+            })
+          }
+
+          {/*<Task text={'Pentear o cabelo'}/>
           <Task text={'Passar maquiagem'} />
           <Task text={'Fazer as unhas'}/>
           <Task text={'Falar com o princípe'}/>
-          <Task text={'Reinar o reino'}/>
+        <Task text={'Reinar o reino'}/>*/}
+
+
         </View>
 
       </View>
