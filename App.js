@@ -3,6 +3,16 @@ import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpaci
 import Task from './components/Tarefa.js';
 
 export default function App() {
+
+  const [task, setTask] = useState();
+
+  const handleAddTask = () => {
+    console.log(task);
+
+  const [taskItems, setTaskItems] = useState([]);
+  
+  }
+
   return (
     <View style={styles.container}>
 
@@ -21,7 +31,7 @@ export default function App() {
 
       </View>
       <KeyboardAvoidingView 
-        behavior={Platform.OS === "android" ? "padding" : "height"}
+        behavior={Platform.android === "android" ? "padding" : "height"}
         style={styles.writeTaskWrapper}
       >
         <TextInput style={styles.input} placeholder={'Escreva a terefa'} value={task} onChangeText={text => setTask(text)} />
