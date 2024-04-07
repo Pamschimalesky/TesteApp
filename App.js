@@ -7,10 +7,16 @@ export default function App() {
   const [task, setTask] = useState();
 
   const handleAddTask = () => {
+    Keyboard.dismiss();
     setTaskItems([...taskItems, task])
     setTask(null);
 
   const [taskItems, setTaskItems] = useState([]);
+
+  const completeTask = (index) => {
+    let itemsCopy = [...taskItems];
+    itemsCopy.splice(index, 1);
+    setTaskItems(itemsCopy)  }
 
   }
 
@@ -25,7 +31,15 @@ export default function App() {
           {/*Local das tarefas*/}
           {
             taskItems.map((item, index) => {
-              return <task key={index}text={item} />
+
+            {/* return <task key={index}text={item} /> */}
+
+              return (
+                <TouchableOpacity key={index}  onPress={() => completeTask(index)}>
+                  <Task text={item} /> 
+                </TouchableOpacity>
+              )
+              
             })
           }
 
