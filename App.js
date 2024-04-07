@@ -24,8 +24,8 @@ export default function App() {
         <View style={styles.itens}>
           {/*Local das tarefas*/}
           {
-            taskItems.map((item)) => {
-              return <task text={item} />
+            taskItems.map((item, index) => {
+              return <task key={index}text={item} />
             })
           }
 
