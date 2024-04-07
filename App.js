@@ -25,7 +25,7 @@ export default function App() {
 
       {/*Tarefas de hoje */}
       <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Tarefas da Rapulzel</Text>
+        <Text style={styles.sectionTitle}>Minhas tarefas</Text>
 
         <View style={styles.itens}>
           {/*Local das tarefas*/}
@@ -39,7 +39,7 @@ export default function App() {
                   <Task text={item} /> 
                 </TouchableOpacity>
               )
-              
+
             })
           }
 
